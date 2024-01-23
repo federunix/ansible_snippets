@@ -1,11 +1,12 @@
 {% set ns = namespace(output=[]) %}
 {% for product in products_json.products %}
-{% set product_repositories = namespace(value=[]) %}
-{% for repository in repositories_json.repositories %}
+  {% set product_repositories = namespace(value=[]) %}
+  {% for repository in repositories_json.repositories %}
     {% if repository.product_id == product.id %}
-    {% set _ = product_repositories.value.append(repository) %}
+      {% set _ = product_repositories.value.append(repository) %}
     {% endif %}
+  {% endfor %}
+  {% set product_with_repositories = product | combine({'repositories': product_repositories.value}) %}
+  {% set _ = ns.output.append(product_with_repositories) %}
 {% endfor %}
-{% set product_with_repositories = product | combine({'repositories': product_repositories.value}) %}
-{% set _ = ns.output.append(product_with_repositories) %}
-{% endfor %}
+{{ ns.output | to_nice_yaml }}
