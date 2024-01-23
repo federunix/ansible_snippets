@@ -1,5 +1,4 @@
 ---
-
 - name: Ansible playbook to convert JSON to YAML
   hosts: localhost
   gather_facts: false
