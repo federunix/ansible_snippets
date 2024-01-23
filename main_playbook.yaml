@@ -3,27 +3,29 @@
   hosts: localhost
   gather_facts: false
   vars:
-    debug_playbook: true
+    debug_playbook: false
   tasks:
-    - name: Read JSON file
+    - name: Read products.json file
       ansible.builtin.set_fact:
-        products_json: "{{ lookup('file', 'products.json') }}"
+        products_json: "{{ lookup('file', 'products.json') | from_json }}"
+
+    - name: Read repositories.json file
+      ansible.builtin.set_fact:
+        repositories_json: "{{ lookup('file', 'repositories.json') | from_json }}"
 
     - name: Print JSON file content
       ansible.builtin.debug:
         var: products_json
       when: debug_playbook
 
-    - name: Convert JSON to YAML
-      ansible.builtin.set_fact:
-        yaml_content: "{{ products_json | to_nice_yaml }}"
-
-    - name: Print YAML content
+    - name: Print JSON file content
       ansible.builtin.debug:
-        var: yaml_content
+        var: repositories_json
+      when: debug_playbook
 
-    - name: Write YAML content to file
-      ansible.builtin.copy:
-        content: "{{ yaml_content }}"
+    - name: Create output.yaml file
+      ansible.builtin.template:
+        src: "output_template.j2"
         dest: "output.yaml"
         mode: '0644'
+      when: not debug_playbook
