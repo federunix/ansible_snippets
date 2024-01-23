@@ -2,21 +2,26 @@
 - name: Ansible playbook to convert JSON to YAML
   hosts: localhost
   gather_facts: false
+  debug_playbook: true
   tasks:
     - name: Read JSON file
       ansible.builtin.set_fact:
         json_content: "{{ lookup('file', 'repositories.json') }}"
 
-    - name: Convert JSON to YAML
-      ansible.builtin.set_fact:
-        yaml_content: "{{ json_content | from_json | to_nice_yaml }}"
-
-    - name: Print YAML content
+    - name: Print JSON file content
       ansible.builtin.debug:
-        var: yaml_content
+        var: json_content
 
-    - name: Write YAML content to file
-      ansible.builtin.copy:
-        content: "{{ yaml_content }}"
-        dest: "output.yaml"
-        mode: '0644'
+    # - name: Convert JSON to YAML
+    #   ansible.builtin.set_fact:
+    #     yaml_content: "{{ json_content | from_json | to_nice_yaml }}"
+
+    # - name: Print YAML content
+    #   ansible.builtin.debug:
+    #     var: yaml_content
+
+    # - name: Write YAML content to file
+    #   ansible.builtin.copy:
+    #     content: "{{ yaml_content }}"
+    #     dest: "output.yaml"
+    #     mode: '0644'
