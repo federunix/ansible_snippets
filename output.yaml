@@ -1,1 +1,51 @@
-                                                                                                                                                                                                                                                                                        
+---
+                                                                                                                                                                                                                                                                                                                                                                                                                                                        -   id: 1
+    name: Product 1
+    repositories:
+    -   id: 1
+        name: Repository 1
+        product_id: 1
+    -   id: 2
+        name: Repository 2
+        product_id: 1
+    repository_count: 2
+-   id: 2
+    name: Product 2
+    repositories:
+    -   id: 3
+        name: Repository 3
+        product_id: 2
+    -   id: 4
+        name: Repository 4
+        product_id: 2
+    -   id: 5
+        name: Repository 5
+        product_id: 2
+    repository_count: 3
+-   id: 3
+    name: Product 3
+    repositories: []
+    repository_count: 0
+-   id: 4
+    name: Product 4
+    repositories:
+    -   id: 6
+        name: Repository 6
+        product_id: 4
+    repository_count: 1
+-   id: 5
+    name: Product 5
+    repositories:
+    -   id: 7
+        name: Repository 7
+        product_id: 5
+    -   id: 8
+        name: Repository 8
+        product_id: 5
+    -   id: 9
+        name: Repository 9
+        product_id: 5
+    -   id: 10
+        name: Repository 10
+        product_id: 5
+    repository_count: 4
