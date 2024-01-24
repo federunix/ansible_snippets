@@ -3,27 +3,32 @@
     {
       "id": 1,
       "name": "Product 1",
-      "repository_count": 2
+      "repository_count": 2,
+      "album": "The Dark Side of the Moon"
     },
     {
       "id": 2,
       "name": "Product 2",
-      "repository_count": 3
+      "repository_count": 3,
+      "album": "Wish You Were Here"
     },
     {
       "id": 3,
       "name": "Product 3",
-      "repository_count": 0
+      "repository_count": 0,
+      "album": "Animals"
     },
     {
       "id": 4,
       "name": "Product 4",
-      "repository_count": 1
+      "repository_count": 1,
+      "album": "The Wall"
     },
     {
       "id": 5,
       "name": "Product 5",
-      "repository_count": 4
+      "repository_count": 4,
+      "album": "The Division Bell"
     }
   ]
 }
