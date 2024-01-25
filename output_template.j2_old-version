@@ -1,0 +1,27 @@
+---
+{% set filtered_products = [] %}
+{% for item in products_json.products %}
+    {% set filtered_products_item = item | reject('match', 'album') %}
+    {% set _ = filtered_products.append(filtered_products_item) %}
+{% endfor %}
+{{ filtered_products }}
+
+{% set filtered_repositories = [] %}
+{% for item in repositories_json.repositories %}
+    {% set filtered_repositories_item = item | reject('match', 'antani_value|pink_floyd_song') %}
+    {% set _ = filtered_repositories.append(filtered_repositories_item) %}
+{% endfor %}
+{{ filtered_repositories }}
+
+{% set ns = namespace(output=[]) %}
+{% for product in filtered_products %}
+  {% set product_repositories = namespace(value=[]) %}
+  {% for repository in filtered_repositories %}
+    {% if repository.product_id == product.id %}
+      {% set _ = product_repositories.value.append(repository) %}
+    {% endif %}
+  {% endfor %}
+  {% set product_with_repositories = product | combine({'repositories': product_repositories.value}) %}
+  {% set _ = ns.output.append(product_with_repositories) %}
+{% endfor %}
+{{ ns.output | to_nice_yaml }}

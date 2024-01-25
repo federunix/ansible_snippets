@@ -1,51 +1,76 @@
 ---
--   id: 1
+-   album: The Dark Side of the Moon
+    id: 1
     name: Product 1
     repositories:
-    -   id: 1
+    -   antani_value: 234
+        id: 1
         name: Repository 1
+        pink_floyd_song: Wish You Were Here
         product_id: 1
-    -   id: 2
+    -   antani_value: 256
+        id: 2
         name: Repository 2
+        pink_floyd_song: Comfortably Numb
         product_id: 1
     repository_count: 2
--   id: 2
+-   album: Wish You Were Here
+    id: 2
     name: Product 2
     repositories:
-    -   id: 3
+    -   antani_value: 289
+        id: 3
         name: Repository 3
+        pink_floyd_song: Time
         product_id: 2
-    -   id: 4
+    -   antani_value: 215
+        id: 4
         name: Repository 4
+        pink_floyd_song: Money
         product_id: 2
-    -   id: 5
+    -   antani_value: 277
+        id: 5
         name: Repository 5
+        pink_floyd_song: Another Brick in the Wall
         product_id: 2
     repository_count: 3
--   id: 3
+-   album: Animals
+    id: 3
     name: Product 3
     repositories: []
     repository_count: 0
--   id: 4
+-   album: The Wall
+    id: 4
     name: Product 4
     repositories:
-    -   id: 6
+    -   antani_value: 221
+        id: 6
         name: Repository 6
+        pink_floyd_song: Shine On You Crazy Diamond
         product_id: 4
     repository_count: 1
--   id: 5
+-   album: The Division Bell
+    id: 5
     name: Product 5
     repositories:
-    -   id: 7
+    -   antani_value: 299
+        id: 7
         name: Repository 7
+        pink_floyd_song: Hey You
         product_id: 5
-    -   id: 8
+    -   antani_value: 205
+        id: 8
         name: Repository 8
+        pink_floyd_song: The Great Gig in the Sky
         product_id: 5
-    -   id: 9
+    -   antani_value: 267
+        id: 9
         name: Repository 9
+        pink_floyd_song: Us and Them
         product_id: 5
-    -   id: 10
+    -   antani_value: 222
+        id: 10
         name: Repository 10
+        pink_floyd_song: Comfortably Numb
         product_id: 5
     repository_count: 4

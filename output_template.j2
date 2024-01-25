@@ -4,7 +4,8 @@
   {% set product_repositories = namespace(value=[]) %}
   {% for repository in repositories_json.repositories %}
     {% if repository.product_id == product.id %}
-      {% set _ = product_repositories.value.append(repository) %}
+      {% set repository_without_antani = {key: value, key, value in repository.items() if key != 'antani_value'} %}
+      {% set _ = product_repositories.value.append(repository_without_antani) %}
     {% endif %}
   {% endfor %}
   {% set product_with_repositories = product | combine({'repositories': product_repositories.value}) %}
